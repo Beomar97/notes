@@ -1,0 +1,24 @@
+### Get all notes
+GET http://localhost:8080/notes/api/note/all
+
+### Post new note
+POST http://localhost:8080/notes/api/note/new
+Content-Type: application/json
+
+{
+  "title": "Is this the real life",
+  "description": "is this just fantasy"
+}
+
+### Edit existing note
+PUT http://localhost:8080/notes/api/note/edit
+Content-Type: application/json
+
+{
+  "id": "a5b6325f-0d5e-4b1d-ab60-29d8d3d957aa",
+  "title": "Is this the test",
+  "description": "is this test"
+}
+
+### Delete existing note
+DELETE http://localhost:8080/notes/api/note/delete?id=a5b6325f-0d5e-4b1d-ab60-29d8d3d957aa

@@ -1,0 +1,36 @@
+<div class="flex flex-col gap-12 items-center max-w-lg mx-auto">
+  <div class="flex flex-col gap-6 w-full">
+    <button
+      mat-raised-button
+      color="primary"
+      class="w-full"
+      (click)="openCreateNoteDialog()"
+    >
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Add Button"
+        fontIcon="add_circle"
+      ></mat-icon>
+      Create new Note
+    </button>
+    <form class="w-full">
+      <mat-form-field appearance="fill" class="w-full">
+        <input
+          type="text"
+          placeholder="Search Notes"
+          aria-label="Notes"
+          matInput
+          [formControl]="formControl"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+
+  <app-note
+    *ngFor="let note of filteredNotes"
+    class="w-full"
+    [note]="note"
+    (noteEditedEvent)="saveNote($event)"
+    (noteDeletedEvent)="deleteNote($event)"
+  ></app-note>
+</div>
